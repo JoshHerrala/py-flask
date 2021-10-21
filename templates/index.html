@@ -1,9 +1,13 @@
 <!doctype html>
 <html>
     <head>
-        <title>home</title>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Welcome to Global Megacorp</title>
+        {% endif %}
     </head>
     <body>
-        <h1>Hello Lucas</h1>
+        <h1>Hello {{ user.username }}</h1>
     </body>
 </html>
