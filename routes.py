@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from forms import LoginForm
 from app import user_name
 
 
@@ -18,6 +19,11 @@ def index():
         }
     ]
 	return render_template('index.html', title='Global Megacorp Home', user=user, posts=posts)
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title='Sign In', form=form)
 
 @app.route("/greeting/")
 def greeting():
