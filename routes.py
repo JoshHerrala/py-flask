@@ -8,7 +8,8 @@ from app import user_name
 @app.route("/index")
 def index():
 	user = {'username': user_name }
-	posts = [
+	
+    posts = [
         {
             'author': {'username': 'Mia'},
             'body': 'Beautiful day in San Franciso!'
