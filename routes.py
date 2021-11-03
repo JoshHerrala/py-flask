@@ -1,15 +1,15 @@
 from flask import render_template, flash, redirect
 from app import app
 from forms import LoginForm
-from app import user_name
-
+from app import user_name,bork
 
 @app.route("/")
 @app.route("/index")
 def index():
+	db_user = {'db_user_first_name': bork["first_name"]}
+	#breakpoint()
 	user = {'username': user_name }
-	
-    posts = [
+	posts = [
         {
             'author': {'username': 'Mia'},
             'body': 'Beautiful day in San Franciso!'
@@ -19,7 +19,7 @@ def index():
             'body': 'The Pittsburgh SV-1 is daft!'
         }
     ]
-	return render_template('index.html', title='Global Megacorp Home', user=user, posts=posts)
+	return render_template('index.html', title='Global Megacorp Home', user=user, posts=posts, mongo=db_user)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
