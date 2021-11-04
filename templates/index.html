@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Hello {{ user.username }}</h1>
-    <h1>Hello {{ mongo.db_user_first_name }}</h1>
+    <h1>Hello {{ mongo_user }}</h1>
     {% for post in posts %}
     <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
     {% endfor %}
