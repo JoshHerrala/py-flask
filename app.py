@@ -15,8 +15,9 @@ def load_sample_data():
 	client = db_connection()
 	#breakpoint()
 	emp_collection = client["employees"]
-    #emp1 = { "first_name": "Lucas", "primary_address": "123 Main Street"}
-	#x = emp_collection.insert_one(emp1)
+	client.employees.remove({})
+	emp1 = { "first_name": "Lucas", "primary_address": "123 Main Street"}
+	emp_collection.insert_one(emp1)
 	first_record = emp_collection.find_one()
 	#breakpoint()
 	return first_record
@@ -26,4 +27,5 @@ import routes
 
 #breakpoint()
 #find all
-#array = list(emp_collection.find(myquery))
+#array = list(emp_collection.find())
+#client.list_collection_names()
