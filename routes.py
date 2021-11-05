@@ -1,25 +1,26 @@
 from flask import render_template, flash, redirect
 from app import app
 from forms import LoginForm
-from app import user_name,first_record
+#from app import user_name,first_record
 
 @app.route("/")
 @app.route("/index")
 def index():
 	
-	#breakpoint()
-	user = {'username': user_name }
-	posts = [
-        {
-            'author': {'username': 'Mia'},
-            'body': 'Beautiful day in San Franciso!'
-        },
-        {
-            'author': {'username': 'Rob'},
-            'body': 'The Pittsburgh SV-1 is daft!'
-        }
-    ]
-	return render_template('index.html', title='Global Megacorp Home', user=user, posts=posts, mongo_user=first_record["first_name"])
+	# #breakpoint()
+	# user = {'username': user_name }
+	# posts = [
+ #        {
+ #            'author': {'username': 'Mia'},
+ #            'body': 'Beautiful day in San Franciso!'
+ #        },
+ #        {
+ #            'author': {'username': 'Rob'},
+ #            'body': 'The Pittsburgh SV-1 is daft!'
+ #        }
+ #    ]
+	# return render_template('index.html', title='Global Megacorp Home', user=user, posts=posts, mongo_user=first_record["first_name"])
+	return render_template('temp.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
