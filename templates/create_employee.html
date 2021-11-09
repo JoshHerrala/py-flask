@@ -1,7 +1,12 @@
+{% extends "menu.html" %}
+{% block content %}
+
 <form action='' method = "POST">
- 
-  <p>name <input type = "text" name = "first_name" /></p>
-  <p>address <input type = "integer" name = "primary_address" /></p>
-  
+  <p>Create a new Employee record:</p>
+  <p>Name <input type = "text" name = "first_name" /></p>
+  <p>Primary Address <input type = "integer" name = "primary_address" /></p>
+  <p>Position <input type = "text" name = "position" /></p>
   <p><input type = "submit" value = "Submit" /></p>
 </form>
+
+{% endblock %}

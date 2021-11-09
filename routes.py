@@ -38,12 +38,11 @@ def create():
 		#employee_id = request.form['employee_id']
 		first_name = request.form['first_name']
 		primary_address = request.form['primary_address']
-		#position = request.form['position']
+		position = request.form['position']
 		# employee = EmployeeModel(employee_id=employee_id, name=name, age=age, position = position)
 		# db.session.add(employee)
 		# db.session.commit()
-		new_employee = { "first_name": first_record, "primary_address": primary_address}
+		new_employee = { "first_name": first_record, "primary_address": primary_address, "position": position}
 		#breakpoint()
-		#TODO import collection from app
 		emp.insert_one(new_employee)
 		return redirect('/index')
