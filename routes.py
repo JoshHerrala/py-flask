@@ -16,7 +16,7 @@ def index():
             'body': 'The Pittsburgh SV-1 is daft!'
         }
     ]
-	return render_template('index.html', title='Global Megacorp Home', posts=posts, mongo_user=first_record["first_name"])
+	return render_template('index.html', title='Global Megacorp Home', posts=posts, mongo_user=first_record[0]["first_name"])
 	#return render_template('temp.html')
 
 @app.route('/login', methods=['GET', 'POST'])
